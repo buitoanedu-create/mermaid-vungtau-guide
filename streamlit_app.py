@@ -76,7 +76,7 @@ st.info(
 # HÀM CHỌN ĐỊA ĐIỂM
 # ==================================================
 
-def lay_dia_diem_phu_hop(question, max_places=12):
+def lay_dia_diem_phu_hop(question, max_places=6):
 
     q = question.lower()
     data = df.copy()
