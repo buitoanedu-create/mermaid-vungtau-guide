@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 from openai import OpenAI
+from PIL import Image
 
 # ==================================================
 # CẤU HÌNH TRANG
@@ -10,6 +11,12 @@ st.set_page_config(
     page_title="Mermaid AI Concierge",
     page_icon="🧜",
     layout="centered"
+)
+logo = Image.open("logo_mermaid.png")
+
+st.image(
+    logo,
+    width=320
 )
 
 # ==================================================
@@ -47,22 +54,22 @@ client = OpenAI(
 
 st.title("🧜 Mermaid AI Concierge")
 
-st.markdown(
+st.write(
     """
-    **Trợ lý AI dành cho khách lưu trú tại Mermaid Seaside Hotel Vũng Tàu.**
+    Trợ lý AI dành cho khách lưu trú tại
+    **Mermaid Seaside Hotel (Vũng Tàu)**.
 
-    Bạn có thể hỏi:
-
-    - Gia đình tôi có 2 trẻ em, chiều nay nên đi đâu?
+    **Bạn có thể hỏi:**
     - Tôi muốn ăn hải sản gần khách sạn.
-    - Có quán café nào gần Mermaid không?
-    - Tôi muốn đi biển và ngắm cảnh.
-    - Lập lịch trình 4 giờ tại Vũng Tàu.
+    - Có quán café nào gần đây không?
+    - Tôi muốn đi biển.
+    - Gia đình tôi có 2 trẻ em, chiều nay nên đi đâu?
+    - ...
     """
 )
 
 st.info(
-    "📍 Điểm xuất phát mặc định: Mermaid Seaside Hotel."
+    "📍 Điểm xuất phát mặc định: Mermaid Seaside Hotel (164 Trần Phú, Vũng Tàu)."
 )
 
 # ==================================================
